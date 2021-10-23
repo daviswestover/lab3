@@ -1,0 +1,65 @@
+def multiply(x,y,product = 0):
+    if x == 0:
+        return product
+    if x > 0:
+        product += y
+        return multiply(x-1,y, product)
+
+
+def collectOddValues(listOfInt):
+    for i in listOfInt:
+        if i % 2 == 0:
+            listOfInt.remove(i)
+            return collectOddValues(listOfInt)
+        else:
+            continue
+    return listOfInt
+
+def countInts(listOfInt, num, counter = 0):
+    if num in listOfInt:
+        counter += 1
+        listOfInt.remove(num)
+        return countInts(listOfInt, num, counter)
+    else:
+        exit
+    return counter
+
+def reverseString(s, newstring = ''):
+    if len(s) > 0:
+        newstring += s[-1]
+        s = s[:-1]
+        return reverseString(s, newstring)
+    else:
+        return newstring
+
+def removeSubString(s, sub):
+    if sub in s:
+        slist = list(s)
+        sublist = list(sub)
+        found = True
+        for i in range(len(slist)-1):
+            if sublist[0] == slist[i]:
+                for j in range(len(sublist)-1):
+                    print(i+j, 'i+j'
+                    if i + j <= len(slist) and sublist[j] == slist[i+j]:
+                        newS = slist
+                        newS.remove('l')
+                        
+                    else:
+                        found = False
+                if found == True:
+                    continue
+                else:
+                    continue
+            else:
+                continue
+        newString = "".join(newS)
+        return removeSubString(newString,sub)
+
+    else:
+        return s
+        
+print(removeSubString("Lolololol", "lol"))
+assert removeSubString("Lolololol", "lol") == "Loo"
+
+
